@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="search.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <canvas id="matrix"></canvas>
+    <div class="head">
+        <div class="name">आव्यूह</div>
+        <div class="search">
+            <div class="icon" onclick="toggleSearch()"><ion-icon name="search-circle"></ion-icon></div>
+            <form action="/search" method="post" id="searchForm">
+                <div class="input">
+                    <input type="search" name="query" placeholder="Search..." id="Mysearch" required>
+                </div>
+            </form>
+            <div class="clear" onclick="document.getElementById('Mysearch').value = ''"><ion-icon name="close"></ion-icon></div>
+        </div>
+    </div>
+
+    <nav class="sidebar">
+        <div class="logo-menu">
+            <h2 class="logo">Matrix</h2>
+            <i class='bx bx-menu toggle-btn'></i>        
+        </div>
+        <ul class="list">
+            <li class="list-item">
+                <a href="#">
+                    <i class='bx bxs-grid-alt'></i>
+                    <span class="link-name" style="--i:1;">Dashboard</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#">
+                    <i class='bx bxs-user-account'></i>
+                    <span class="link-name" style="--i:2;">User</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#">
+                    <i class='bx bxs-chat'></i>
+                    <span class="link-name" style="--i:3;">Messages</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#">
+                    <i class='bx bxs-folder'></i>                    
+                    <span class="link-name" style="--i:4;">File Manager</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#">
+                    <i class='bx bxs-bookmarks'></i>
+                    <span class="link-name" style="--i:5;">Saved</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#">
+                    <i class='bx bx-log-in'></i>
+                    <span class="link-name" style="--i:6;"><button class="btnlogin-popup" onclick="openLoginPopup()">Login</button></span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="#">
+                    <i class='bx bxs-cog'></i>
+                    <span class="link-name" style="--i:7;">Setting</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <span class="icon-close" onclick="closePopup()">
+            <ion-icon name="close"></ion-icon>
+        </span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <!-- Login Form Fields here -->
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                    <p>Don't have an account? 
+                    <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#">
+                <!-- Registration Form Fields here -->
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="email" required>
+                        <label>User Name</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">I agree to the terms & conditions</label>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <div class="login-register">
+                        <p>Already have an account? 
+                        <a href="#" class="login-link">Login</a></p>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="search-results">
+        <!-- Search results content will go here -->
+    </div>
+
+    <script src="./search.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
