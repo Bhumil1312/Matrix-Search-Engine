@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page | Matrix</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -60,7 +61,7 @@
             </li>
             <li class="list-item">
                 <a href="#">
-                    <i class='bx bx-log-in'></i>
+                    <i class='bx bx-log-out bx-flip-horizontal' ></i>
                     <span class="link-name" style="--i:6;"><button class="btnlogin-popup">Login</button></span>
                 </a>
             </li>
@@ -68,6 +69,12 @@
                 <a href="#">
                     <i class='bx bxs-cog' ></i>
                     <span class="link-name" style="--i:7;">Setting</span>
+                </a>
+            </li>
+            <li class="list-item">
+                <a href="{% url 'logout' %}" class="btn btn-primary">
+                    <i class='bx bx-log-out bx-flip-vertical' ></i>
+                    <span class="link-name" style="--i:6;"><button class="btnlogin-popup">Logout</button></span>
                 </a>
             </li>
         </ul>
@@ -131,25 +138,8 @@
         </div>
     </div>
     
-    <script src="./script.js"></script>
+    <script src="{% static 'script.js' %}"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
