@@ -1,9 +1,3 @@
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const query = document.getElementById('Mysearch').value;
-    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-});
-
 const sidebar = document.querySelector('.sidebar');
 const toggleBtn = document.querySelector('.toggle-btn');
 const wrapper = document.querySelector('.wrapper');

@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required(login_url='login')
 def HomePage(request):
+    if request.method=='POST':
+        return redirect('results')
     return render (request,'index.html')
 
 def SignupPage(request):
@@ -22,9 +24,6 @@ def SignupPage(request):
             my_user.save()
             return redirect('login')
         
-
-
-
     return render (request,'signup.html')
 
 def LoginPage(request):
@@ -43,3 +42,8 @@ def LoginPage(request):
 def LogoutPage(request):
     logout(request)
     return redirect('login')
+
+def ResultPage(request):
+    if request.method=='POST':
+        return redirect('results')
+    return render (request,'search.html')

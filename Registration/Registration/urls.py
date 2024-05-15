@@ -26,6 +26,7 @@ urlpatterns = [
     path('login/', views.LoginPage, name='login'),
     path('home/', views.HomePage, name='Home'),
     path('logout/', views.LogoutPage, name='logout'),
+    path('home/search.html', views.ResultPage, name='results'),
 ]
 
 if settings.DEBUG:
